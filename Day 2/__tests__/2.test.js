@@ -1,4 +1,7 @@
-const { findTotalDifference, findSimilarityScore } = require("../coding/1.js");
+const {
+  findTotalDifference,
+  findSimilarityScore,
+} = require("../../Day 1/Coding/1.js");
 
 describe("findDifferenceBetween", () => {
   it("should return 0 if arrays are empty", () => {
