@@ -1,14 +1,20 @@
+const fileToRead = __dirname + "/1.txt";
+console.log(fileToRead);
+
 function findTotalDifference(list1, list2) {
-  list1.sort((a, b) => {
+  let newList1 = [...list1];
+  let newList2 = [...list2];
+
+  newList1.sort((a, b) => {
     return a - b;
   });
-  list2.sort((a, b) => {
+  newList2.sort((a, b) => {
     return a - b;
   });
 
   const differenceBetweenElements = [];
-  for (let i = 0; i < list1.length; i = i + 1) {
-    differenceBetweenElements.push(Math.abs(list1[i] - list2[i]));
+  for (let i = 0; i < newList1.length; i = i + 1) {
+    differenceBetweenElements.push(Math.abs(newList1[i] - newList2[i]));
   }
 
   let total = 0;
@@ -39,7 +45,7 @@ function findSimilarityScore(list1, list2) {
 }
 
 const fs = require("fs");
-const input = fs.readFileSync("1.txt", "utf-8");
+const input = fs.readFileSync(fileToRead, "utf-8");
 const leftList = [];
 const rightList = [];
 input
@@ -52,3 +58,5 @@ input
   });
 console.log(findTotalDifference(leftList, rightList));
 console.log(findSimilarityScore(leftList, rightList));
+
+module.exports = { findTotalDifference, findSimilarityScore };
