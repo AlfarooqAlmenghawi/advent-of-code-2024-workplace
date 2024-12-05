@@ -1,5 +1,4 @@
 const fileToRead = __dirname + "/1.txt";
-console.log(fileToRead);
 
 function findTotalDifference(list1, list2) {
   let newList1 = [...list1];
@@ -56,7 +55,5 @@ input
     leftList.push(left);
     rightList.push(right);
   });
-console.log(findTotalDifference(leftList, rightList));
-console.log(findSimilarityScore(leftList, rightList));
 
 module.exports = { findTotalDifference, findSimilarityScore };
